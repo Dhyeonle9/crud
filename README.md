@@ -103,6 +103,22 @@ def index(request):
         <hr>
     {% endfor %}
 </body>
+
 - 하나의 게시물 출력
+```python
+def detail(request, id):
+    post = Post.objects.get(id=id)
+
+    context = {
+        'post': post,
+    }
+    return render(request, 'detail.html', context)
+```
+2. detail.html
+<body>
+    <h1>detail</h1>
+    <p>{{post.title}}</p>
+    <p>{{post.content}}</p>
+</body>
 
 1. views.py
