@@ -75,3 +75,34 @@ admin.site.register(Post)
 ```
 python manage.py createsuperuser
 ```
+
+## CRUD
+> Create, Read, Update, Delete
+
+### 1. READ
+- 전체 게시물 출력
+
+```python
+from .models import Post
+
+def index(request):
+    posts = Post.objects.all()
+
+    context = {
+        'posts': posts,
+    }
+    return render(request, 'index.html', context)
+```
+2. index.html
+
+<body>
+    <h1>index</h1>
+    {% for post in posts%}
+        <p>{{post.title}}</p>
+        <p>{{post.content}}</p>
+        <hr>
+    {% endfor %}
+</body>
+- 하나의 게시물 출력
+
+1. views.py
