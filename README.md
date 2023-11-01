@@ -81,10 +81,12 @@ python manage.py createsuperuser
 
 ### 1. READ
 - 전체 게시물 출력
+1. urls.py
+    - urlpatterns리스트에 `path('index/', views.index),` 추가
 
+2. views.py
 ```python
 from .models import Post
-
 def index(request):
     posts = Post.objects.all()
 
@@ -93,8 +95,8 @@ def index(request):
     }
     return render(request, 'index.html', context)
 ```
-2. index.html
-
+3. index.html
+```html
 <body>
     <h1>index</h1>
     {% for post in posts%}
@@ -103,8 +105,11 @@ def index(request):
         <hr>
     {% endfor %}
 </body>
-
+```
 - 하나의 게시물 출력
+1. urls.py
+    - urlpatterns리스트에 `path('posts/<int:id>/', views.detail),` 추가
+2. views.py
 ```python
 def detail(request, id):
     post = Post.objects.get(id=id)
@@ -114,11 +119,11 @@ def detail(request, id):
     }
     return render(request, 'detail.html', context)
 ```
-2. detail.html
+3. detail.html
+```html
 <body>
     <h1>detail</h1>
     <p>{{post.title}}</p>
     <p>{{post.content}}</p>
 </body>
-
-1. views.py
+```
