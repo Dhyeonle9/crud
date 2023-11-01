@@ -66,3 +66,12 @@ python manage.py migrate
 python manage.py sqlmigrate posts 0001 
 ```
 4. 생성한 모델을 admin에 등록
+```
+from .models import Post
+
+admin.site.register(Post)
+```
+5. 관리자 계정 생성
+```
+python manage.py createsuperuser
+```
