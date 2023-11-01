@@ -1,5 +1,7 @@
 from django.db import models
 
 class Post(models.Model):
-    def __init__(self):
+    title = models.CharField(max_length=100)
+    content = models.TextField()
+
     
