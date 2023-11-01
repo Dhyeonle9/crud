@@ -28,5 +28,11 @@ urlpatterns = [
     # Create(사용자에게 데이터를 입력받고, 저장함)
     path('posts/new/', views.new),
     path('posts/create/', views.create),
+
+    # Delete
     path('posts/<int:id>/delete/', views.delete),
+
+    # Update(수정할 기존 데이터를 READ, 수정데이터 입력받기, 저장)
+    path('posts/<int:id>/edit/', views.edit),
+    path('posts/<int:id>/updata/', views.update),
 ]
