@@ -30,4 +30,15 @@ python manage.py runserver
 django-admin startapp <appname>
 ```
 8. 앱등록
-`setting.py`의 `INSTALLED_APP`리스트에 앱이름 추가
+`setting.py`의 `INSTALLED_APP`리스트에 <appname> 추가
+
+9. `urls.py` 수정
+- 상단에 `from <앱이름> import views`
+- `urlpatterns`리스트에 path('index/',views.index) 추가
+10. `views.py` 수정
+```python
+def index(request):
+    return render(request, 'index.html')
+```
+11 'index.html' 생성
+- 원하는대로 생성
