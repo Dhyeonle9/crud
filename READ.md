@@ -55,3 +55,14 @@ class Post(models.Model):
     content = models.TextField()
 
 ```
+2. 번역본 생성
+```
+python manage.py makemigrations
+```
+3. DB에반영
+```python
+python manage.py migrate
+# DB 반영 확인
+python manage.py sqlmigrate posts 0001 
+```
+4. 생성한 모델을 admin에 등록
