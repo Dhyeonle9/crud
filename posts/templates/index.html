@@ -7,7 +7,9 @@
 </head>
 <body>
     <h1>index</h1>
+    <a href="/posts/new/">새글작성</a>
     {% for post in posts%}
+        <p>{{post.id}}</p>
         <p>{{post.title}}</p>
         <p>{{post.content}}</p>
         <a href="/posts/{{post.id}}/">detail</a>
