@@ -40,5 +40,18 @@ django-admin startapp <appname>
 def index(request):
     return render(request, 'index.html')
 ```
-11 'index.html' 생성
+11. `index.html` 생성
 - 원하는대로 생성
+
+## MODEL
+
+1. 모델 정의(`models.py`)
+    - 모델의 이름은 기본적으로 단수형태
+
+```python
+# 원하는 모델 클래스 만들기
+class Post(models.Model):
+    title = models.CharField(max_length=100)
+    content = models.TextField()
+
+```
