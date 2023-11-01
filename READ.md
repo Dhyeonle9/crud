@@ -5,3 +5,7 @@
 1. 프로젝트 폴더 생성
 2. 프로젝트 폴더 vscode로 열기
     - `.gitignore`, `README.md`
+3. 장고 새로운 프로젝트 생성
+```
+django-admin startproject <projectname> .
+```
